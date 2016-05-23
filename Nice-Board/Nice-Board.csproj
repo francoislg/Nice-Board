@@ -98,22 +98,24 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Assembly\ClassFactory.cs" />
-    <Compile Include="Configuration\BoardConfigurationReader.cs" />
+    <Compile Include="Clients\DeviceAuthorizationResponse.cs" />
+    <Compile Include="Clients\GetAccessTokenResponse.cs" />
+    <Compile Include="Clients\GoogleAgendaClient.cs" />
+    <Compile Include="Clients\GoogleClient.cs" />
+    <Compile Include="Configuration\ConfigurationModels\GoogleConfigurationModel.cs" />
+    <Compile Include="Configuration\ConfigurationModels\ProfileConfigurationModel.cs" />
+    <Compile Include="Configuration\ProfileConfigurationReader.cs" />
     <Compile Include="Configuration\ConfigurationModels\GlobalConfigurationModel.cs" />
-    <Compile Include="Configuration\ConfigurationModels\BoardConfigurationModel.cs" />
     <Compile Include="Configuration\GlobalConfigurationReader.cs" />
     <Compile Include="Configuration\IModelReader.cs" />
     <Compile Include="Configuration\JsonReader.cs" />
-    <Compile Include="Core\BaseDataModel.cs" />
-    <Compile Include="Core\IBoard.cs" />
-    <Compile Include="Core\IDataFetcher.cs" />
-    <Compile Include="Core\IDataModel.cs" />
+    <Compile Include="Core\Board.cs" />
+    <Compile Include="Core\ICardProvider.cs" />
+    <Compile Include="Core\ICard.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\Registry.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -141,9 +143,51 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Assembly\" />
+    <Folder Include="Cards\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Nice-Board-ARM|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Nice-Board-ARM\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Nice-Board-ARM|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Nice-Board-ARM\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Nice-Board-ARM|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Nice-Board-ARM\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

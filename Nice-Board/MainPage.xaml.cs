@@ -6,8 +6,9 @@ using Nice_Board.Configuration;
 using Nice_Board.Configuration.ConfigurationModels;
 using Windows.ApplicationModel;
 using Windows.Storage;
-using Nice_Board.Core;
 using System.Threading.Tasks;
+using System.Text;
+using Nice_Board.Clients;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -19,7 +20,7 @@ namespace Nice_Board
     public sealed partial class MainPage : Page
     {
         private GlobalConfigurationReader m_ConfigurationReader;
-        private BoardConfigurationReader m_BoardConfigurationReader;
+        private ProfileConfigurationReader m_ProfileConfigurationReader;
 
         public MainPage()
         {
@@ -39,17 +40,31 @@ namespace Nice_Board
 
                 GlobalConfigurationModel config = await m_ConfigurationReader.GetConfiguration();
 
-                IStorageFolder boardRootPath = await rootPath.GetFolderAsync(config.BoardsPath);
+                IStorageFolder boardRootPath = await rootPath.GetFolderAsync(config.ProfilesPath);
 
-                m_BoardConfigurationReader = new BoardConfigurationReader(boardRootPath);
-                /*
-                IList<Task<IBoard<IDataModel>>> tasks = config.Boards
-                                                               .Select(m_BoardConfigurationReader.LoadBoard)
+                m_ProfileConfigurationReader = new ProfileConfigurationReader(boardRootPath);
+                
+                IList<Task<ProfileConfigurationModel>> tasks = config.ProfileNames
+                                                               .Select(m_ProfileConfigurationReader.LoadProfile)
                                                                .ToList();
 
-                IList<IBoard<IDataModel>> boards = await Task.WhenAll(tasks);
+                IList<ProfileConfigurationModel> profiles = await Task.WhenAll(tasks);
 
-                IBoard<IDataModel> firsBoard = boards.ElementAt(0);*/
+                textBlock.Text = profiles.Aggregate(new StringBuilder(), (sb, profile) => sb.Append(profile.Name)).ToString();
+
+                textBlock.Text += "  --   " + Windows.Networking.Connectivity.NetworkInformation.GetHostNames().Aggregate(new StringBuilder(), (sb, hostname) => sb.Append(hostname.RawName)).ToString();
+
+                GoogleClient client = new GoogleClient(profiles.First().Google.Value);
+                GoogleAgendaClient gAgendaClient = new GoogleAgendaClient(client);
+
+                textBlock.Text = "User code: " + (await client.GetUserCode());
+
+                while (!(await client.HasAuthorization()))
+                {
+                    Task.Delay(5000).Wait();
+                }
+
+                gAgendaClient.Synchronize();
             }
             catch(Exception e)
             {

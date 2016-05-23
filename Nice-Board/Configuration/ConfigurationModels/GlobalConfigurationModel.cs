@@ -2,9 +2,9 @@
 
 namespace Nice_Board.Configuration.ConfigurationModels
 {
-    internal class GlobalConfigurationModel
+    internal struct GlobalConfigurationModel
     {
-        public string BoardsPath = "Boards";
-        public List<string> Boards = new List<string>();
+        public string ProfilesPath;
+        public List<string> ProfileNames;
     }
 }
