@@ -3,13 +3,13 @@ using System.Threading;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Calendar.v3;
 using Google.Apis.Services;
-using Nice_Board.Configuration.ConfigurationModels;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Net.Http;
 using Newtonsoft.Json;
+using Nice_Board.Core.Models;
 
-namespace Nice_Board.Clients
+namespace Nice_Board.Clients.Google
 {
     public class GoogleClient
     {

@@ -1,9 +1,9 @@
 ﻿using System.IO;
 using Newtonsoft.Json;
 
-namespace Nice_Board.Configuration
+namespace Nice_Board.Configuration.Readers
 {
-    public class JsonReader<TJsonModel> : IModelReader<TJsonModel>
+    internal class JsonReader<TJsonModel> : IModelReader<TJsonModel>
     {
         private readonly JsonSerializer m_JsonSerializer;
 

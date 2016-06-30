@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using Windows.UI.Xaml.Controls;
-using Nice_Board.Configuration;
-using Nice_Board.Configuration.ConfigurationModels;
 using Windows.ApplicationModel;
 using Windows.Storage;
 using System.Threading.Tasks;
 using System.Text;
+using Nice_Board.Configuration.Readers;
+using Nice_Board.Core.Models;
 using Nice_Board.Clients;
+using Nice_Board.Clients.Google;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 

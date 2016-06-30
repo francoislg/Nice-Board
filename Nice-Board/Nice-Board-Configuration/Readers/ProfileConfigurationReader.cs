@@ -1,15 +1,12 @@
 ﻿using System;
 using System.IO;
 using Windows.Storage;
-using Nice_Board.Configuration.ConfigurationModels;
 using System.Threading.Tasks;
-using System.Linq;
-using System.Collections.Generic;
-using Nice_Board.Core;
+using Nice_Board.Core.Models;
 
-namespace Nice_Board.Configuration
+namespace Nice_Board.Configuration.Readers
 {
-    internal class ProfileConfigurationReader
+    public class ProfileConfigurationReader
     {
         private readonly IModelReader<ProfileConfigurationModel> m_ModelReader;
         private readonly IStorageFolder m_RootFolder;

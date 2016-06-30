@@ -1,14 +1,12 @@
 ﻿using System;
 using System.IO;
-using Nice_Board.Configuration.ConfigurationModels;
 using Windows.Storage;
-using Windows.ApplicationModel;
-using Windows.Foundation;
 using System.Threading.Tasks;
+using Nice_Board.Core.Models;
 
-namespace Nice_Board.Configuration
+namespace Nice_Board.Configuration.Readers
 {
-    internal class GlobalConfigurationReader
+    public class GlobalConfigurationReader
     {
         private readonly IStorageFolder m_RootFolder;
         private const string CONFIGURATION_FILENAME = "config.json";

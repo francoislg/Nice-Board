@@ -1,11 +1,10 @@
 ﻿using Google.Apis.Auth.OAuth2;
 using Google.Apis.Calendar.v3;
 using Google.Apis.Services;
-using Nice_Board.Configuration.ConfigurationModels;
 using System;
 using System.Threading;
 
-namespace Nice_Board.Clients
+namespace Nice_Board.Clients.Google
 {
     public class GoogleAgendaClient
     {

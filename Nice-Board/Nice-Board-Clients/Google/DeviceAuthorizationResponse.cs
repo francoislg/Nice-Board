@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Nice_Board.Clients
+﻿namespace Nice_Board.Clients.Google
 {
     public class DeviceAuthorizationResponse
     {
