@@ -1,18 +1,18 @@
-﻿using Google.Apis.Auth.OAuth2;
+﻿using Nice_Board.GoogleClient;
 using Google.Apis.Calendar.v3;
 using Google.Apis.Services;
 using System;
 using System.Threading;
 
-namespace Nice_Board.Clients.Google
+namespace Nice_Board.GoogleCalendar.Client
 {
     public class GoogleAgendaClient
     {
         private static string ApplicationName = "Google Calendar API .NET Quickstart";
 
-        private GoogleClient GoogleClient;
+        private GoogleRestClient GoogleClient;
 
-        public GoogleAgendaClient(GoogleClient GoogleClient)
+        public GoogleAgendaClient(GoogleRestClient GoogleClient)
         {
             this.GoogleClient = GoogleClient;
             GoogleClient.AddScope(CalendarService.Scope.CalendarReadonly);

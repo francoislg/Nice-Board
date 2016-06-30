@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Threading;
-using Google.Apis.Auth.OAuth2;
-using Google.Apis.Calendar.v3;
-using Google.Apis.Services;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Net.Http;
-using Newtonsoft.Json;
 using Nice_Board.Core.Models;
+using Newtonsoft.Json;
+using Nice_Board.GoogleClient.Responses;
 
-namespace Nice_Board.Clients.Google
+namespace Nice_Board.GoogleClient
 {
-    public class GoogleClient
+    public class GoogleRestClient
     {
         private IList<string> Scopes;
         private GoogleConfigurationModel Config;
@@ -19,7 +17,7 @@ namespace Nice_Board.Clients.Google
         private string DeviceCode;
         private GetAccessTokenResponse LastToken;
 
-        public GoogleClient(GoogleConfigurationModel config)
+        public GoogleRestClient(GoogleConfigurationModel config)
         {
             this.Config = config;
             Scopes = new List<string>();

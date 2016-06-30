@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board", "Nice-Board.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board-Core", "..\Nice-Board-Core\Nice-Board-Core.csproj", "{C8B817CD-7131-40D8-8023-4E22778B1782}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board-Clients", "Nice-Board-Clients\Nice-Board-Clients.csproj", "{60147A24-1D6D-41D9-809D-AC22B8186417}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board-GoogleClient", "Nice-Board-Clients\Nice-Board-GoogleClient.csproj", "{60147A24-1D6D-41D9-809D-AC22B8186417}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board-Configuration", "Nice-Board-Configuration\Nice-Board-Configuration.csproj", "{B21CF02C-8232-48AE-B2A7-5D4082E9EE76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board-GoogleCalendar", "Nice-Board-GoogleCalendar\Nice-Board-GoogleCalendar.csproj", "{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +93,22 @@ Global
 		{B21CF02C-8232-48AE-B2A7-5D4082E9EE76}.Release|x64.Build.0 = Release|x64
 		{B21CF02C-8232-48AE-B2A7-5D4082E9EE76}.Release|x86.ActiveCfg = Release|x86
 		{B21CF02C-8232-48AE-B2A7-5D4082E9EE76}.Release|x86.Build.0 = Release|x86
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Debug|ARM.ActiveCfg = Debug|ARM
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Debug|ARM.Build.0 = Debug|ARM
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Debug|x64.ActiveCfg = Debug|x64
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Debug|x64.Build.0 = Debug|x64
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Debug|x86.ActiveCfg = Debug|x86
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Debug|x86.Build.0 = Debug|x86
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Release|ARM.ActiveCfg = Release|ARM
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Release|ARM.Build.0 = Release|ARM
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Release|x64.ActiveCfg = Release|x64
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Release|x64.Build.0 = Release|x64
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Release|x86.ActiveCfg = Release|x86
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

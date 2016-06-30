@@ -7,8 +7,8 @@
     <ProjectGuid>{60147A24-1D6D-41D9-809D-AC22B8186417}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nice_Board.Clients</RootNamespace>
-    <AssemblyName>Nice-Board-Clients</AssemblyName>
+    <RootNamespace>Nice_Board.GoogleClient</RootNamespace>
+    <AssemblyName>Nice-Board-GoogleClient</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
@@ -107,10 +107,9 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Google\DeviceAuthorizationResponse.cs" />
-    <Compile Include="Google\GetAccessTokenResponse.cs" />
-    <Compile Include="Google\GoogleAgendaClient.cs" />
-    <Compile Include="Google\GoogleClient.cs" />
+    <Compile Include="Responses\DeviceAuthorizationResponse.cs" />
+    <Compile Include="Responses\GetAccessTokenResponse.cs" />
+    <Compile Include="GoogleRestClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Nice_Board_Clients.rd.xml" />
   </ItemGroup>

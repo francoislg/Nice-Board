@@ -137,13 +137,17 @@
       <Project>{c8b817cd-7131-40d8-8023-4e22778b1782}</Project>
       <Name>Nice-Board-Core</Name>
     </ProjectReference>
-    <ProjectReference Include="Nice-Board-Clients\Nice-Board-Clients.csproj">
+    <ProjectReference Include="Nice-Board-Clients\Nice-Board-GoogleClient.csproj">
       <Project>{60147a24-1d6d-41d9-809d-ac22b8186417}</Project>
-      <Name>Nice-Board-Clients</Name>
+      <Name>Nice-Board-GoogleClient</Name>
     </ProjectReference>
     <ProjectReference Include="Nice-Board-Configuration\Nice-Board-Configuration.csproj">
       <Project>{b21cf02c-8232-48ae-b2a7-5d4082e9ee76}</Project>
       <Name>Nice-Board-Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="Nice-Board-GoogleCalendar\Nice-Board-GoogleCalendar.csproj">
+      <Project>{2ffe8946-f9fb-407c-9fb3-aa04e12dfcfb}</Project>
+      <Name>Nice-Board-GoogleCalendar</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

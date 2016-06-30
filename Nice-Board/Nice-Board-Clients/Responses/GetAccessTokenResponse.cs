@@ -1,4 +1,4 @@
-﻿namespace Nice_Board.Clients.Google
+﻿namespace Nice_Board.GoogleClient.Responses
 {
     public class GetAccessTokenResponse
     {
