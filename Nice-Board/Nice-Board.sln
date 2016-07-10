@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board", "Nice-Board.csproj", "{BFAB8F36-E58A-4D6F-9269-5A73B7E9E649}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board-Core", "..\Nice-Board-Core\Nice-Board-Core.csproj", "{C8B817CD-7131-40D8-8023-4E22778B1782}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board-Core", "Nice-Board-Core\Nice-Board-Core.csproj", "{C8B817CD-7131-40D8-8023-4E22778B1782}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board-GoogleClient", "Nice-Board-Clients\Nice-Board-GoogleClient.csproj", "{60147A24-1D6D-41D9-809D-AC22B8186417}"
 EndProject

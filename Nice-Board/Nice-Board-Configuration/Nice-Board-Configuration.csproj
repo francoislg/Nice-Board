@@ -115,7 +115,7 @@
     <EmbeddedResource Include="Properties\Nice_Board_Configuration.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Nice-Board-Core\Nice-Board-Core.csproj">
+    <ProjectReference Include="..\Nice-Board-Core\Nice-Board-Core.csproj">
       <Project>{c8b817cd-7131-40d8-8023-4e22778b1782}</Project>
       <Name>Nice-Board-Core</Name>
     </ProjectReference>
