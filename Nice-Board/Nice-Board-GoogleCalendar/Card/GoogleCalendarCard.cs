@@ -4,28 +4,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI;
 
 namespace Nice_Board.GoogleCalendar.Card
 {
     public class GoogleCalendarCard : ICard
     {
-        public GoogleCalendarCard()
-        {
-
-        }
-
-        public int Color
+        public Color Color
         {
             get
             {
-                return 0;
+                return Colors.Blue;
             }
         }
 
-        public DateTime CreationDate { get; private set; }
-        public string Description { get; private set; }
-        public DateTime ModifiedDate { get; private set; }
-        public string Title { get; private set; }
-        public string User { get; private set; }
+        public DateTime CreationDate { get; set; }
+        public string Description { get; set; }
+        public DateTime ModifiedDate { get; set; }
+        public string Title { get; set; }
+        public string User { get; set; }
     }
 }

@@ -10,6 +10,10 @@ using Nice_Board.Configuration.Readers;
 using Nice_Board.Core.Models;
 using Nice_Board.GoogleClient;
 using Nice_Board.GoogleCalendar.Client;
+using Nice_Board.Core.Card;
+using Nice_Board.GoogleCalendar.Card;
+using System.Collections.ObjectModel;
+using Nice_Board_CoreUI;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -23,11 +27,30 @@ namespace Nice_Board
         private GlobalConfigurationReader m_ConfigurationReader;
         private ProfileConfigurationReader m_ProfileConfigurationReader;
 
+        private ICard OneCard;
+        private IList<CardControl> CardControls;
+
         public MainPage()
         {
             this.InitializeComponent();
 
-            InitBoards();
+            Test();
+            //InitBoards();
+        }
+
+        private async Task Test()
+        {
+            OneCard = new GoogleCalendarCard()
+            {
+                Title = "TEST",
+                Description = "DESC"
+            };
+            List<ICard> cards = new List<ICard>()
+            {
+                OneCard
+            };
+            CardControls = cards.Select(card => new CardControl(card)).ToList();
+            CardsList.ItemsSource = CardControls;
         }
 
         private async Task InitBoards()
