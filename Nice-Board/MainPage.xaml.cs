@@ -14,6 +14,7 @@ using Nice_Board.Core.Card;
 using Nice_Board.GoogleCalendar.Card;
 using System.Collections.ObjectModel;
 using Nice_Board_CoreUI;
+using Nice_Board_RTC;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,7 +29,7 @@ namespace Nice_Board
         private ProfileConfigurationReader m_ProfileConfigurationReader;
 
         private ICard OneCard;
-        private IList<CardControl> CardControls;
+        private ObservableCollection<CardControl> CardControls;
 
         public MainPage()
         {
@@ -49,8 +50,11 @@ namespace Nice_Board
             {
                 OneCard
             };
-            CardControls = cards.Select(card => new CardControl(card)).ToList();
-            CardsList.ItemsSource = CardControls;
+            
+            CardControls = new ObservableCollection<CardControl>();
+            CardControls.Add(new CardControl(OneCard));
+            CardControls.Add(new CardControl(new RTCCard()));
+            MyPanel.ItemsSource = CardControls;
         }
 
         private async Task InitBoards()

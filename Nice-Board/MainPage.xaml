@@ -10,7 +10,13 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <ListView x:Name="CardsList" HorizontalAlignment="Left" Height="507" Margin="10,123,0,0" VerticalAlignment="Top" Width="340"/>
-
+        <ItemsControl Name="MyPanel">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VariableSizedWrapGrid Orientation="Horizontal" Height="Auto" Width="Auto" MaximumRowsOrColumns="3" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    </VariableSizedWrapGrid>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
     </Grid>
 </Page>

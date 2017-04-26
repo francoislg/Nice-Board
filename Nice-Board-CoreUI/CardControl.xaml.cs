@@ -19,18 +19,19 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Nice_Board_CoreUI
 {
-    public sealed partial class CardControl : UserControl
+    public partial class CardControl : UserControl
     {
         protected readonly ICard Card;
 
         public CardControl(ICard p_Card)
         {
             Card = p_Card;
+            
+            this.InitializeComponent();
+
             Title.Text = Card.Title;
             Description.Text = Card.Description;
             SetColor(Card.Color);
-
-            this.InitializeComponent();
         }
 
         protected void SetColor(Color p_Color)

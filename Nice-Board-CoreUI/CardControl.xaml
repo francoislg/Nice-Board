@@ -15,8 +15,8 @@
                 <GradientStop Color="#FF000CFF" Offset="0.793"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBox x:Name="Title" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="5" Width="80"/>
-        <TextBox x:Name="Description" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="5" Width="385" Margin="0,37,0,0"/>
+        <TextBox x:Name="Title" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="5" Width="80"/>
+        <TextBox x:Name="Description" IsReadOnly="True" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="5" Width="385" Margin="0,37,0,0"/>
 
     </Grid>
 </UserControl>

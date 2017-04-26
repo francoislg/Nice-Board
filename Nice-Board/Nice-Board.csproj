@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -152,6 +152,10 @@
     <ProjectReference Include="Nice-Board-GoogleCalendar\Nice-Board-GoogleCalendar.csproj">
       <Project>{2ffe8946-f9fb-407c-9fb3-aa04e12dfcfb}</Project>
       <Name>Nice-Board-GoogleCalendar</Name>
+    </ProjectReference>
+    <ProjectReference Include="Nice-Board-RTC\Nice-Board-RTC.csproj">
+      <Project>{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}</Project>
+      <Name>Nice-Board-RTC</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

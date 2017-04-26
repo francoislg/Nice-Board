@@ -1,9 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board", "Nice-Board.csproj", "{BFAB8F36-E58A-4D6F-9269-5A73B7E9E649}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4B6E9514-76DD-46B6-8C5F-57E0EF471757} = {4B6E9514-76DD-46B6-8C5F-57E0EF471757}
+		{60147A24-1D6D-41D9-809D-AC22B8186417} = {60147A24-1D6D-41D9-809D-AC22B8186417}
+		{B21CF02C-8232-48AE-B2A7-5D4082E9EE76} = {B21CF02C-8232-48AE-B2A7-5D4082E9EE76}
+		{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB} = {2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}
+		{C8B817CD-7131-40D8-8023-4E22778B1782} = {C8B817CD-7131-40D8-8023-4E22778B1782}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board-Core", "Nice-Board-Core\Nice-Board-Core.csproj", "{C8B817CD-7131-40D8-8023-4E22778B1782}"
 EndProject
@@ -14,6 +21,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board-GoogleCalendar", "Nice-Board-GoogleCalendar\Nice-Board-GoogleCalendar.csproj", "{2FFE8946-F9FB-407C-9FB3-AA04E12DFCFB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board-CoreUI", "..\Nice-Board-CoreUI\Nice-Board-CoreUI.csproj", "{4B6E9514-76DD-46B6-8C5F-57E0EF471757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nice-Board-RTC", "Nice-Board-RTC\Nice-Board-RTC.csproj", "{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +37,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BFAB8F36-E58A-4D6F-9269-5A73B7E9E649}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{BFAB8F36-E58A-4D6F-9269-5A73B7E9E649}.Debug|Any CPU.Build.0 = Debug|x86
+		{BFAB8F36-E58A-4D6F-9269-5A73B7E9E649}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{BFAB8F36-E58A-4D6F-9269-5A73B7E9E649}.Debug|ARM.ActiveCfg = Debug|ARM
 		{BFAB8F36-E58A-4D6F-9269-5A73B7E9E649}.Debug|ARM.Build.0 = Debug|ARM
 		{BFAB8F36-E58A-4D6F-9269-5A73B7E9E649}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -127,6 +138,22 @@ Global
 		{4B6E9514-76DD-46B6-8C5F-57E0EF471757}.Release|x64.Build.0 = Release|x64
 		{4B6E9514-76DD-46B6-8C5F-57E0EF471757}.Release|x86.ActiveCfg = Release|x86
 		{4B6E9514-76DD-46B6-8C5F-57E0EF471757}.Release|x86.Build.0 = Release|x86
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Debug|ARM.ActiveCfg = Debug|ARM
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Debug|ARM.Build.0 = Debug|ARM
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Debug|x64.ActiveCfg = Debug|x64
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Debug|x64.Build.0 = Debug|x64
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Debug|x86.ActiveCfg = Debug|x86
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Debug|x86.Build.0 = Debug|x86
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Release|ARM.ActiveCfg = Release|ARM
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Release|ARM.Build.0 = Release|ARM
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Release|x64.ActiveCfg = Release|x64
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Release|x64.Build.0 = Release|x64
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Release|x86.ActiveCfg = Release|x86
+		{C626F74C-7A7A-4C24-B7F1-F9A3746A4E06}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
