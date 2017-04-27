@@ -53,6 +53,8 @@ namespace Nice_Board
             
             CardControls = new ObservableCollection<CardControl>();
             CardControls.Add(new CardControl(OneCard));
+            CardControls.Add(new CardControl(OneCard));
+            CardControls.Add(new CardControl(OneCard));
             CardControls.Add(new CardControl(new RTCCard()));
             MyPanel.ItemsSource = CardControls;
         }
