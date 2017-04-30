@@ -107,6 +107,9 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalendarCardControl.xaml.cs">
+      <DependentUpon>CalendarCardControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Card\GoogleCalendarCard.cs" />
     <Compile Include="Client\GoogleAgendaClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,7 +127,12 @@
       <Name>Nice-Board-GoogleClient</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Page Include="CalendarCardControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

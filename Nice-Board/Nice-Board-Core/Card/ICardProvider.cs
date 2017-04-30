@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Nice_Board.Core.Card
 {
     public interface ICardProvider
     {
-        IList<ICard> FetchCards { get; }
+        Task Synchronize();
+        IReadOnlyCollection<ICard> Cards { get; }
     }
 }

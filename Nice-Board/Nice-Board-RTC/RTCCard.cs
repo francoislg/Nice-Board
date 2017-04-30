@@ -5,25 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI;
+using Windows.UI.Xaml.Controls;
 
 namespace Nice_Board_RTC
 {
     public class RTCCard : ICard
     {
-        public RTCCard()
-        {
-        }
+        public string User => throw new NotImplementedException();
 
-        public string User => "any";
+        public DateTime? CreationDate => throw new NotImplementedException();
 
-        public string Description => "Something somethinf";
+        public DateTime? ModifiedDate => throw new NotImplementedException();
 
-        public string Title => "Testing";
-
-        public Color Color => Colors.Red;
-
-        public DateTime CreationDate => throw new NotImplementedException();
-
-        public DateTime ModifiedDate => throw new NotImplementedException();
+        public UserControl Control => throw new NotImplementedException();
     }
 }

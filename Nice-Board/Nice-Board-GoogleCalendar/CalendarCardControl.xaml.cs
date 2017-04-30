@@ -1,4 +1,5 @@
 ﻿using Nice_Board.Core.Card;
+using Nice_Board.GoogleCalendar.Card;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,19 +20,18 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Nice_Board_CoreUI
 {
-    public partial class CardControl : UserControl
+    public partial class CalendarCardControl : UserControl
     {
-        protected readonly ICard Card;
+        protected readonly GoogleCalendarCard Card;
 
-        public CardControl(ICard p_Card)
+        public CalendarCardControl(GoogleCalendarCard p_Card)
         {
             Card = p_Card;
             
             this.InitializeComponent();
 
-            Title.Text = Card.Title;
-            Description.Text = Card.Description;
-            SetColor(Card.Color);
+            Title.Text = Card.EventName;
+            Date.Text = Card.CreationDate?.ToString();
         }
 
         protected void SetColor(Color p_Color)

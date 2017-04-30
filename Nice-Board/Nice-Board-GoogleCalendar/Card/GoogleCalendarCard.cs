@@ -1,27 +1,25 @@
 ﻿using Nice_Board.Core.Card;
+using Nice_Board_CoreUI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.UI;
+using Windows.UI.Xaml.Controls;
 
 namespace Nice_Board.GoogleCalendar.Card
 {
     public class GoogleCalendarCard : ICard
     {
-        public Color Color
+        private readonly Lazy<UserControl> ControlInstance;
+
+        public GoogleCalendarCard()
         {
-            get
-            {
-                return Colors.Blue;
-            }
+            ControlInstance = new Lazy<UserControl>(() => new CalendarCardControl(this));
         }
 
-        public DateTime CreationDate { get; set; }
-        public string Description { get; set; }
-        public DateTime ModifiedDate { get; set; }
-        public string Title { get; set; }
+        public DateTime? CreationDate { get; set; }
+        public UserControl Control {
+            get { return ControlInstance.Value; }
+        }
+        public string EventName { get; set; }
+        public DateTime? ModifiedDate { get; set; }
         public string User { get; set; }
     }
 }

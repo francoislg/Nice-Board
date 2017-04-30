@@ -107,17 +107,8 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CardControl.xaml.cs">
-      <DependentUpon>CardControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Nice_Board_CoreUI.rd.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="CardControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nice-Board\Nice-Board-Core\Nice-Board-Core.csproj">

@@ -15,6 +15,7 @@ using Nice_Board.GoogleCalendar.Card;
 using System.Collections.ObjectModel;
 using Nice_Board_CoreUI;
 using Nice_Board_RTC;
+using Nice_Board.GoogleCalendar.Provider;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,35 +29,37 @@ namespace Nice_Board
         private GlobalConfigurationReader m_ConfigurationReader;
         private ProfileConfigurationReader m_ProfileConfigurationReader;
 
-        private ICard OneCard;
-        private ObservableCollection<CardControl> CardControls;
+        private ObservableCollection<UserControl> CardControls;
+        private ObservableCollection<ICardProvider> CardProviders;
 
         public MainPage()
         {
             this.InitializeComponent();
 
-            Test();
-            //InitBoards();
+            CardControls = new ObservableCollection<UserControl>();
+            CardProviders = new ObservableCollection<ICardProvider>();
+            CardProviders.CollectionChanged += CardProviders_CollectionChanged;
+            MyPanel.ItemsSource = CardControls;
+
+            //Test();
+            InitBoards();
+        }
+
+        private void CardProviders_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            Task.WaitAll(CardProviders.Select(provider => provider.Synchronize()).ToArray());
+            // This is probably the worst way possible besides bogosorting just before. Change it some day.
+            CardControls.Clear();
+            IEnumerable<UserControl> controls = CardProviders.SelectMany(provider => provider.Cards).Select(provider => provider.Control);
+            foreach(UserControl control in controls)
+            {
+                CardControls.Add(control);
+            }
         }
 
         private async Task Test()
         {
-            OneCard = new GoogleCalendarCard()
-            {
-                Title = "TEST",
-                Description = "DESC"
-            };
-            List<ICard> cards = new List<ICard>()
-            {
-                OneCard
-            };
             
-            CardControls = new ObservableCollection<CardControl>();
-            CardControls.Add(new CardControl(OneCard));
-            CardControls.Add(new CardControl(OneCard));
-            CardControls.Add(new CardControl(OneCard));
-            CardControls.Add(new CardControl(new RTCCard()));
-            MyPanel.ItemsSource = CardControls;
         }
 
         private async Task InitBoards()
@@ -85,7 +88,7 @@ namespace Nice_Board
                 textBlock.Text += "  --   " + Windows.Networking.Connectivity.NetworkInformation.GetHostNames().Aggregate(new StringBuilder(), (sb, hostname) => sb.Append(hostname.RawName)).ToString();
 
                 GoogleRestClient client = new GoogleRestClient(profiles.First().Google.Value);
-                GoogleAgendaClient gAgendaClient = new GoogleAgendaClient(client);
+                GoogleCalendarClient gAgendaClient = new GoogleCalendarClient(client);
 
                 textBlock.Text = "User code: " + (await client.GetUserCode());
 
@@ -94,7 +97,7 @@ namespace Nice_Board
                     Task.Delay(5000).Wait();
                 }
 
-                gAgendaClient.Synchronize();
+                CardProviders.Add(new GoogleCalendarCardProvider(gAgendaClient));
             }
             catch(Exception e)
             {
